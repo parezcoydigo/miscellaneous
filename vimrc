@@ -1,10 +1,10 @@
 " Heavily borrowing from http://www.swaroopch.org/notes/Vim_en:Plugins and http://amix.dk/vim/vimrc.html
 
 " Enable filetype plugins
-filetype plugin on
-filetype indent on
+filetype indent plugin on
+" filetype indent on
 
-" Set ot auto read when a file is changed from the outside
+" Set to auto read when a file is changed from the outside
 set autoread
 
 " For regex turn magic on
@@ -15,6 +15,11 @@ set showmatch
 
 " Enable syntax highlighting
 syntax enable
+
+" Set line wrapping, spell check
+set wrap
+set linebreak
+set spell
 
 " Use UTF-8.
 set encoding=utf-8
@@ -42,7 +47,7 @@ else
 endif
 
 " Set default filetype for new files as markdown
-autocmd BufEnter * if &filetype == "" | setlocal ft=mkd | endif
+autocmd BufEnter * if &filetype == "" | setlocal ft=markdown | endif
 
 " Use spaces instead of tabs
 set expandtab
@@ -53,7 +58,6 @@ set tabstop=4
 
 set ai "Auto indent
 set si "Smart indent
-set wrap "Wrap lines
 
 " Pressing /ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
